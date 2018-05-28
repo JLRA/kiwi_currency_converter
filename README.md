@@ -7,6 +7,7 @@ Retrieve exchange_rate: from DB (*) > forex > manual_values
 To be used as WEB / CLI / CRON_TASK (--update_db_exchange_rates)
 
 # USAGE
+```
 usage: currency_converter [-h] [-i INPUT_CURRENCY] [-o OUTPUT_CURRENCY]
                           [-a AMOUNT] [--update_db_exchange_rates]
 
@@ -23,6 +24,7 @@ optional arguments:
   --update_db_exchange_rates
                         Recommended to be used at programmed tasks (i.e.:
                         Linux crontab)
+```
 
 # DATABASE
 - DB Server : PostgreSQL
