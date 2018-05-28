@@ -110,3 +110,4 @@ APP.PARSER.
 - [IMPORTANT] Use of DB TRANSACTION BLOCK of sentences at .update_exchange_rate() function instead of .commit() calls per each
 - Notify when DB values are obsolete (> 6h from variable.last_updated_time)
 - Improve of Web Message outputs (font, etc.)
+- At .load_exchange_rate_values_from_db() function, use of cursor.fetchall() function selecting rsults based on input_currency instead of single call for each exchage_rate pair
