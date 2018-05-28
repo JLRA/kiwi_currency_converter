@@ -1,0 +1,35 @@
+-- PostgreSQL
+-- ==========
+
+-- Database creation
+CREATE DATABASE currency_converter;
+
+-- Table creation
+\c currency_converter
+
+CREATE SEQUENCE main_exchange_rate_id_exchange_rate_seq;
+CREATE TABLE main_exchange_rate (
+    id_exchange_rate    int PRIMARY KEY DEFAULT nextval('main_exchange_rate_id_exchange_rate_seq'::regclass),
+    input_currency      varchar(3),
+    output_currency     varchar(3),
+    exchange_rate       varchar(10)
+);
+ALTER SEQUENCE main_exchange_rate_id_exchange_rate_seq OWNED BY main_exchange_rate.id_exchange_rate;
+
+CREATE SEQUENCE aux_variable_id_variable_seq;
+CREATE TABLE aux_variable (
+    id_variable    int PRIMARY KEY DEFAULT nextval('aux_variable_id_variable_seq'::regclass),
+    variable       varchar(150),
+    value          varchar(150)
+);
+ALTER SEQUENCE aux_variable_id_variable_seq OWNED BY aux_variable.id_variable;
+
+-- Owner of database and tables
+ALTER DATABASE currency_converter OWNER TO currency_converter
+ALTER TABLE main_exchange_rate OWNER TO currency_converter
+ALTER TABLE aux_variable OWNER TO currency_converter
+
+-- User creation
+
+CREATE USER currency_converter WITH PASSWORD 'kiwi_test';
+GRANT ALL PRIVILEGES ON DATABASE currency_converter TO currency_converter;
