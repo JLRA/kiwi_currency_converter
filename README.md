@@ -7,7 +7,6 @@ Retrieve exchange_rate: from DB (*) > forex > manual_values
 To be used as WEB / CLI / CRON_TASK (--update_db_exchange_rates)
 
 # USAGE
-=======
 usage: currency_converter [-h] [-i INPUT_CURRENCY] [-o OUTPUT_CURRENCY]
                           [-a AMOUNT] [--update_db_exchange_rates]
 
@@ -26,7 +25,6 @@ optional arguments:
                         Linux crontab)
 
 # DATABASE
-==========
 - DB Server : PostgreSQL
 - DB Name   : currency_converter
 - DB User   : currency_converter
@@ -41,7 +39,6 @@ optional arguments:
 
 
 # API
-=====
 APP.MAIN
   .MAIN_UPDATE_DB()
   .MAIN_CLI()
@@ -103,7 +100,6 @@ APP.PARSER.
 
 
 # PENDING IMPROVES
-==================
 - Use of .pgpass (local machine / server side) in order to do NOT attach any password at code
 - Call forex_python.exchange_rate() through threats at MAIN_CRON() or used functions for multiple server request at once instead of in a cue
 - [IMPORTANT] Use of DB TRANSACTION BLOCK of sentences at .update_exchange_rate() function instead of .commit() calls per each
