@@ -27,11 +27,13 @@ optional arguments:
 ```
 
 # DATABASE
+```
 - DB Server : PostgreSQL
 - DB Name   : currency_converter
 - DB User   : currency_converter
 - DB Pass   : kiwi_test
 - TABLES    : main_exchange_rate (id_exchange_rate, input_currency, output_currency), aux_variable (id_variable, variable, value)
+```
 
 * See attached file 20180527_database_creation.txt for DB creation
 
@@ -41,6 +43,7 @@ optional arguments:
 
 
 # API
+```
 APP.MAIN
   .MAIN_UPDATE_DB()
   .MAIN_CLI()
@@ -99,7 +102,7 @@ APP.PARSER.
   .amount_notattion(v_amount)
   .get_usage_msg()
   .exit_msg(v_message)
-
+```
 
 # PENDING IMPROVES
 - Use of .pgpass (local machine / server side) in order to do NOT attach any password at code
